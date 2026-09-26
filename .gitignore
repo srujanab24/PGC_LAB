@@ -1,0 +1,13 @@
+# Compiled binaries
+src/sequential/matrix_sequential
+src/openmp/matrix_openmp
+src/mpi/matrix_mpi
+src/mpi/mpi_send_recv
+src/cuda/matrix_cuda
+*.o
+*.exe
+
+# OS / editor
+.DS_Store
+.vscode/
+*.log
