@@ -1,0 +1,44 @@
+RESULT ANALYSIS
+
+1. THREAD SCALING ANALYSIS
+
+The execution time was measured using 1, 2, 4 and 8 OpenMP threads.
+
+The measured execution times were:
+1 thread  = 0.007940 seconds
+2 threads = 0.007246 seconds
+4 threads = 0.007538 seconds
+8 threads = 0.005069 seconds
+
+The lowest measured parallel execution time was obtained with 8 threads.
+
+The speedup values were:
+1 thread  = 0.5895
+2 threads = 0.6460
+4 threads = 0.6210
+8 threads = 0.9235
+
+The speedup is below 1 because the sequential maximum/minimum search is a very small computation and OpenMP introduces parallelization overhead such as thread management, scheduling and reduction overhead.
+
+Therefore, increasing the number of threads does not provide proportional speedup for this workload.
+
+2. DATA SIZE ANALYSIS
+
+The execution time was measured using 8 threads for different data sizes.
+
+1,000,000 elements  = 0.001475 seconds
+5,000,000 elements  = 0.003315 seconds
+10,000,000 elements = 0.008019 seconds
+
+The execution time increases as the data size increases because every element must be examined to determine the maximum and minimum values.
+
+3. OVERALL OBSERVATION
+
+The experiment demonstrates the implementation of maximum/minimum search using OpenMP parallel reduction.
+
+The results show that parallel performance depends on both the amount of computation and the overhead introduced by parallel execution.
+
+For this simple maximum/minimum search, the computation is small compared with the OpenMP overhead, so significant speedup was not observed.
+
+
+
