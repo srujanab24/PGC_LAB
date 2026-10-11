@@ -1,0 +1,67 @@
+PGC EXPERIMENT 2: SPEEDUP AND EFFICIENCY ANALYSIS
+
+Sequential Execution Time = 3.307914 seconds
+
+1. PTHREADS
+
+Threads: 1
+Speedup: 1.0175
+Efficiency: 101.75%
+
+Threads: 2
+Speedup: 1.8546
+Efficiency: 92.73%
+
+Threads: 4
+Speedup: 2.8362
+Efficiency: 70.90%
+
+Threads: 6
+Speedup: 2.8015
+Efficiency: 46.69%
+
+Threads: 16
+Speedup: 2.6738
+Efficiency: 16.71%
+
+2. OPENMP
+
+Threads: 1
+Speedup: 0.9889
+Efficiency: 98.89%
+
+Threads: 2
+Speedup: 1.8947
+Efficiency: 94.74%
+
+Threads: 4
+Speedup: 2.8282
+Efficiency: 70.71%
+
+Threads: 6
+Speedup: 2.7615
+Efficiency: 46.03%
+
+Threads: 16
+Speedup: 2.7821
+Efficiency: 17.39%
+
+3. ANALYSIS
+
+Both parallel programming approaches produced the correct result.
+
+Performance improved substantially when increasing the number of threads
+from 1 to 4.
+
+Four threads gave the lowest measured execution time for Pthreads and
+OpenMP in this experiment.
+
+Increasing the thread count beyond four did not provide further
+improvement in these measurements.
+
+Efficiency decreased as the thread count increased because speedup did
+not increase proportionally with the number of threads.
+
+The efficiency above 100% for Pthreads with one thread results from
+measurement variation between the sequential and parallel runs.
+

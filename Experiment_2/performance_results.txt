@@ -1,0 +1,42 @@
+PGC EXPERIMENT 2: MULTITHREADING PERFORMANCE ANALYSIS
+
+Sequential execution time = 3.307914 seconds
+
+PTHREADS ANALYSIS
+
+Threads    Execution Time (s)    Speedup    Efficiency (%)
+1          3.251077              1.0175     101.75
+2          1.784038              1.8546      92.73
+4          1.166245              2.8362      70.90
+6          1.180707              2.8015      46.69
+16         1.237177              2.6738      16.71
+
+OPENMP ANALYSIS
+
+Threads    Execution Time (s)    Speedup    Efficiency (%)
+1          3.258855              1.0150     101.50
+2          1.726630              1.9158      95.79
+4          1.133755              2.9174      72.94
+6          1.137450              2.9068      48.45
+16         1.243227              2.6605      16.63
+
+OBSERVATIONS
+
+1. Parallel execution reduces the execution time compared with sequential execution.
+
+2. For Pthreads, the lowest measured execution time was obtained with 4 threads.
+
+3. For OpenMP, the lowest measured execution time was obtained with 4 threads.
+
+4. Increasing the number of threads beyond 4 did not provide further performance improvement in these experiments.
+
+5. Efficiency decreases as the number of threads increases because the speedup is not proportional to the number of threads.
+
+6. The 1-thread efficiency slightly exceeds 100% due to normal execution-time measurement variation.
+
+7. Both Pthreads and OpenMP produced the same final result:
+   499999999500.00
+
+CONCLUSION
+
+The experiment demonstrates thread creation, work distribution, synchronization, race-condition handling, and performance measurement using Pthreads and OpenMP. The results show that parallel execution can reduce computation time, while excessive thread counts introduce overhead and reduce efficiency.
